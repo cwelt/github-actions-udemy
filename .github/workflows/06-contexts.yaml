@@ -13,4 +13,13 @@ jobs:
           echo "Event Name: ${{ github.event_name }}"
           echo "Event Object Path on Runner ${{ github.event_path }}"
           echo "full object: " 
-          cat ${{ github.event_path }}
+          cat "${{ github.event_path }}"
+          echo "Ref: ${{ github.ref }}, Reg short name: ${{ github.ref_name }}, Ref Type: ${{ github.ref_type }}"
+          echo "Commit SHA: ${{ github.sha }} "
+          echo "Actor: ${{ github.actor }}, Actor ID: ${{ github.actor_id }}, Triggering Actor: ${{ github.triggering_actor }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Run ID: ${{ github.run_id }}, Run #: ${{ github.run_number }}"
+      - name: Retrieve Variable
+        run: 
+          echo "My variable MY_VAR=$MY_VAR"
+
